@@ -1,4 +1,5 @@
 {include file="header.tpl" title=$title }
+
 {*
 <div>
 My Name is : {$myname} <br> I am student of {$dept} Department. <br> My skills contain {$skill} as one of the best.
@@ -14,18 +15,26 @@ My Name is : {$myname} <br> I am student of {$dept} Department. <br> My skills c
             <div class="box  box-primary">
                 <div class="box-header with-border">
                     <h3 class="box-title">
-                        <span> {$smarty.get.cmode}</span> User</h3>
+                        <span> 
+                            {* {$smarty.get.cmode} *}
+                            {$cmode}
+                        </span> User</h3>
                     <div class="box-tools">
                         <a class="btn btn-primary btn-sm" href="listUser.php" role="button">List User</a>
                     </div>
                 </div>
                 <div class="box-body">
+
+                {foreach $res as $r}
+
+                {* {$res.userID} *}
+
                     <div class="form-group" style="padding-bottom: 25px;">
                         <label for="name" class="col-sm-2 control-label">Name<span class="text-red"> *</span> </label>
                         <div class="col-sm-10">
-                            <input name="ctl00$ContentPlaceHolder1$txtUserName" maxlength="50"
-                                id="ContentPlaceHolder1_txtUserName" class="form-control" type="text"
-                                placeholder="Enter Your Name" />
+                            <input name="txtUserName" maxlength="50"
+                                id="txtUserName" class="form-control" type="text"
+                                placeholder="Enter Your Name" value='{$r.userName}' />
                             <span id="ContentPlaceHolder1_reqName" style="color:Red;visibility:hidden;">Enter
                                 Name</span>
                         </div>
@@ -35,7 +44,7 @@ My Name is : {$myname} <br> I am student of {$dept} Department. <br> My skills c
                         <div class="col-sm-10">
                             <input name="ctl00$ContentPlaceHolder1$txtUserEmail" type="text" maxlength="50"
                                 id="ContentPlaceHolder1_txtUserEmail" class="form-control"
-                                placeholder="Enter Email Id" />
+                                placeholder="Enter Email Id"  value='{$r.userEmail}' />
                             <span id="ContentPlaceHolder1_lblEmail" class="pull-left" style="color:Red;">[Ex : .com /
                                 org / co.in]</span>
                             <br />
@@ -64,8 +73,8 @@ My Name is : {$myname} <br> I am student of {$dept} Department. <br> My skills c
                     <div class="form-group" style="padding-bottom: 100px;">
                         <label for="name" class="col-sm-2 control-label">MobileNo</label>
                         <div class="col-sm-10">
-                            <input name="ctl00$ContentPlaceHolder1$txtUserMobileNo" maxlength="20"
-                                id="ContentPlaceHolder1_txtUserMobileNo" class="form-control" type="text"
+                            <input name="txtUserMobileNo" maxlength="20"
+                                id="txtUserMobileNo" class="form-control" type="text"
                                 placeholder="Enter Mobile No" />
                             <span id="ContentPlaceHolder1_lblMobile" class="pull-left" style="color:Red;">Enter Only
                                 Number</span>
@@ -97,8 +106,8 @@ My Name is : {$myname} <br> I am student of {$dept} Department. <br> My skills c
                         <label class="col-sm-2 control-label">Active</label>
                         <div class="col-sm-10">
                             <div class="checkbox icheck">
-                                <input id="ContentPlaceHolder1_chkUserActive" type="checkbox"
-                                    name="ctl00$ContentPlaceHolder1$chkUserActive" checked="checked" />
+                                <input id="chkUserActive" type="checkbox"
+                                    name="chkUserActive" checked="checked" />
                             </div>
                         </div>
                     </div>&nbsp;
@@ -106,7 +115,7 @@ My Name is : {$myname} <br> I am student of {$dept} Department. <br> My skills c
                     <div class="form-group">
                         <label class="col-sm-2 control-label">User Role <span class="text-red">*</span> </label>
                         <div class="col-sm-10">
-                            <select name="ctl00$ContentPlaceHolder1$ddlUserRole" id="ContentPlaceHolder1_ddlUserRole"
+                            <select name="userRole" id="userRole"
                                 class="form-control" style="width:250px;">
                                 <option value="0">--Select--</option>
                                 <option value="admin">Admin</option>
@@ -114,17 +123,16 @@ My Name is : {$myname} <br> I am student of {$dept} Department. <br> My skills c
                                 <option value="developer">Software Developer</option>
 
                             </select>
-                            <span id="ContentPlaceHolder1_reqUserRole" style="color:Red;visibility:hidden;">Choose User
+                            <span id="userRole" style="color:Red;visibility:hidden;">Choose User
                                 Role</span>
                         </div>
                     </div>
 
                 </div>
+                 {/foreach}
                 <!-- /.box-body -->
                 <div class="box-footer">
-                    <input type="submit" name="ctl00$ContentPlaceHolder1$btnSubmit" value="Submit"
-                        onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$btnSubmit&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))"
-                        id="ContentPlaceHolder1_btnSubmit" class="btn btn-primary pull-right" />
+                    <input type="submit" name="btnSubmit" value="Submit" id="btnSubmit" class="btn btn-primary pull-right" />
                 </div>
                 <!-- /.box-footer -->
             </div>

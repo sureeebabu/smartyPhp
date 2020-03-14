@@ -1,8 +1,4 @@
 {include file="header.tpl" title=$title }
-{*
-<div>
-    My Name is : {$myname} <br> I am student of {$dept} Department. <br> My skills contain {$skill} as one of the best.
-</div> *}
 
 <section class="content-header">
     <h1><i class="fa fa-user"></i> User Master</h1>
@@ -36,35 +32,44 @@
                 </div>
                 <div class="box-body">
                     <div class="table-responsive">
-                    <table class="table table-bordered table-hover">
-                        <tr class="info">
-                            <th class="text-center">#</th>
-                            <th class="text-center" style="width:40%">Name</th>
-                            <th class="text-center">Email</th>
-                            <th class="text-center">Mobile No</th>
-                            <th class="text-center">Active</th>
-                            <th class="text-center" style="width:10%">Action</th>
-                        </tr>
-                        {foreach $res as $r}
-                        <tr>
-                            <td class="text-center">{$r.userID} </td>
-                            <td>{$r.userName}</td>
-                            <td>{$r.userEmail}</td>
-                            <td>{$r.userMobileNo}</td>
-                            <td class="text-center">
-                                <b>{$r.userIsActive}
-                            </td>
-                            <td class="text-center">
-                                <a class="paddingRight-15" title="Edit" href="addEditUser.php?cmode=edit"><i class="fa fa-edit"></i></a>
-                        </tr>
-                        {foreachelse}
-                        <tr>
-                            <td colspan="2" class="text-center">
-                                <b class="text-danger">No Record Found</b>
-                            </td>
-                        </tr>
-                        {/foreach}
-                    </table>
+                        <table class="table table-bordered table-hover">
+                            <tr class="info">
+                                <th class="text-center">#</th>
+                                <th class="text-center" style="width:30%">Name</th>
+                                <th class="text-center">Email</th>
+                                <th class="text-center">Mobile No</th>
+                                <th class="text-center">Active</th>
+                                <th class="text-center" style="width:10%">Action</th>
+                            </tr>
+
+                            {foreach $res as $r}
+                            <tr>
+                                <td class="text-center">{$r.userID} </td>
+                                <td>{$r.userName}</td>
+                                <td>{$r.userEmail}</td>
+                                <td class="text-center">{$r.userMobileNo}</td>
+                                <td class="text-center">
+                                
+                                    {if $r.userIsActive == 1}
+                                    Yes
+                                    {else}
+                                    No
+                                    {/if}
+                                
+                                
+                                </td>
+                                <td class="text-center">
+                                    <a class="paddingRight-15" title="Edit" href="addEditUser.php?cmode=edit&userID={$r.userID}"><i
+                                            class="fa fa-edit"></i></a>
+                            </tr>
+                            {foreachelse}
+                            <tr>
+                                <td colspan="6" class="text-center">
+                                    <b class="text-danger">No Record Found</b>
+                                </td>
+                            </tr>
+                            {/foreach}
+                        </table>
                     </div>
                 </div>
             </div>

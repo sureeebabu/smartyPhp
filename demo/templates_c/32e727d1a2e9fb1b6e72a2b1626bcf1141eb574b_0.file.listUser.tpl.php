@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-03-14 07:24:26
+/* Smarty version 3.1.34-dev-7, created on 2020-03-14 09:16:50
   from 'D:\xampp\htdocs\smartyPhp\demo\templates\listUser.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e6c789a530a66_82214045',
+  'unifunc' => 'content_5e6c92f2bd1eb5_02576277',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '32e727d1a2e9fb1b6e72a2b1626bcf1141eb574b' => 
     array (
       0 => 'D:\\xampp\\htdocs\\smartyPhp\\demo\\templates\\listUser.tpl',
-      1 => 1584167064,
+      1 => 1584173809,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5e6c789a530a66_82214045 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e6c92f2bd1eb5_02576277 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>$_smarty_tpl->tpl_vars['title']->value), 0, false);
 ?>
 
@@ -43,50 +43,59 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
                 </div>
                 <div class="box-body">
                     <div class="table-responsive">
-                    <table class="table table-bordered table-hover">
-                        <tr class="info">
-                            <th class="text-center">#</th>
-                            <th class="text-center" style="width:40%">Name</th>
-                            <th class="text-center">Email</th>
-                            <th class="text-center">Mobile No</th>
-                            <th class="text-center">Active</th>
-                            <th class="text-center" style="width:10%">Action</th>
-                        </tr>
-                        <?php
+                        <table class="table table-bordered table-hover">
+                            <tr class="info">
+                                <th class="text-center">#</th>
+                                <th class="text-center" style="width:30%">Name</th>
+                                <th class="text-center">Email</th>
+                                <th class="text-center">Mobile No</th>
+                                <th class="text-center">Active</th>
+                                <th class="text-center" style="width:10%">Action</th>
+                            </tr>
+
+                            <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['res']->value, 'r');
 $_smarty_tpl->tpl_vars['r']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['r']->value) {
 $_smarty_tpl->tpl_vars['r']->do_else = false;
 ?>
-                        <tr>
-                            <td class="text-center"><?php echo $_smarty_tpl->tpl_vars['r']->value['userID'];?>
+                            <tr>
+                                <td class="text-center"><?php echo $_smarty_tpl->tpl_vars['r']->value['userID'];?>
  </td>
-                            <td><?php echo $_smarty_tpl->tpl_vars['r']->value['userName'];?>
+                                <td><?php echo $_smarty_tpl->tpl_vars['r']->value['userName'];?>
 </td>
-                            <td><?php echo $_smarty_tpl->tpl_vars['r']->value['userEmail'];?>
+                                <td><?php echo $_smarty_tpl->tpl_vars['r']->value['userEmail'];?>
 </td>
-                            <td><?php echo $_smarty_tpl->tpl_vars['r']->value['userMobileNo'];?>
+                                <td class="text-center"><?php echo $_smarty_tpl->tpl_vars['r']->value['userMobileNo'];?>
 </td>
-                            <td class="text-center">
-                                <b><?php echo $_smarty_tpl->tpl_vars['r']->value['userIsActive'];?>
-
-                            </td>
-                            <td class="text-center">
-                                <a class="paddingRight-15" title="Edit" href="addEditUser.php?cmode=edit"><i class="fa fa-edit"></i></a>
-                        </tr>
-                        <?php
+                                <td class="text-center">
+                                
+                                    <?php if ($_smarty_tpl->tpl_vars['r']->value['userIsActive'] == 1) {?>
+                                    Yes
+                                    <?php } else { ?>
+                                    No
+                                    <?php }?>
+                                
+                                
+                                </td>
+                                <td class="text-center">
+                                    <a class="paddingRight-15" title="Edit" href="addEditUser.php?cmode=edit&userID=<?php echo $_smarty_tpl->tpl_vars['r']->value['userID'];?>
+"><i
+                                            class="fa fa-edit"></i></a>
+                            </tr>
+                            <?php
 }
 if ($_smarty_tpl->tpl_vars['r']->do_else) {
 ?>
-                        <tr>
-                            <td colspan="2" class="text-center">
-                                <b class="text-danger">No Record Found</b>
-                            </td>
-                        </tr>
-                        <?php
+                            <tr>
+                                <td colspan="6" class="text-center">
+                                    <b class="text-danger">No Record Found</b>
+                                </td>
+                            </tr>
+                            <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-                    </table>
+                        </table>
                     </div>
                 </div>
             </div>
