@@ -1,0 +1,58 @@
+﻿.page_enabled, .page_disabled
+        {
+            display: inline-block;
+            height: 30px;
+            min-width: 30px;
+            line-height: 30px;
+            text-align: center;
+            text-decoration: none;
+            border: 1px solid #ccc;
+            text-decoration: none !important;
+            font-weight: normal !important;
+        }
+    .page_enabled
+        {
+            background-color: #eee;
+            color: #000;
+        }
+        .page_disabled
+        {
+            background-color: #3C8DBC !important;
+            color: #fff !important;
+        }
+.paddingRight-15 {
+    padding-right:15px;
+}
+
+
+ .aVisited:visited {
+            color:black;
+        }
+
+.greenBold {
+    color:green;
+    font-weight : bold;
+}
+.redBold {
+    color:red;
+    font-weight : bold;
+}
+
+.divider {
+    border-bottom:3px solid #ffffff;
+}
+
+.back-to-top {
+    cursor: pointer;
+    background-color:#808080;
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    display:none;
+}
+
+
+.ddlFormControl {
+      
+  border-color: #d2d6de;
+}
