@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-03-07 07:53:28
-  from 'D:\xampp\htdocs\smartyPhp\demo\templates\display.tpl' */
+/* Smarty version 3.1.34-dev-7, created on 2020-03-14 07:24:26
+  from 'D:\xampp\htdocs\smartyPhp\demo\templates\listUser.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e6344e80cbd68_60138257',
+  'unifunc' => 'content_5e6c789a530a66_82214045',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'a849ca362ec5ea216b33e03aada8faab487fc01d' => 
+    '32e727d1a2e9fb1b6e72a2b1626bcf1141eb574b' => 
     array (
-      0 => 'D:\\xampp\\htdocs\\smartyPhp\\demo\\templates\\display.tpl',
-      1 => 1583564006,
+      0 => 'D:\\xampp\\htdocs\\smartyPhp\\demo\\templates\\listUser.tpl',
+      1 => 1584167064,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5e6344e80cbd68_60138257 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e6c789a530a66_82214045 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>$_smarty_tpl->tpl_vars['title']->value), 0, false);
 ?>
 
@@ -37,7 +37,7 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
                 <div class="box-header with-border">
                     <h3 class="box-title">List of Users</h3>
                     <div class="box-tools">
-                        <a class="btn btn-primary btn-sm" href="#?cmode=add" role="button">Add New
+                        <a class="btn btn-primary btn-sm" href="addEditUser.php?cmode=add" role="button">Add New
                             User</a>
                     </div>
                 </div>
@@ -72,7 +72,7 @@ $_smarty_tpl->tpl_vars['r']->do_else = false;
 
                             </td>
                             <td class="text-center">
-                                <a class="paddingRight-15" title="Edit" href="#"><i class="fa fa-edit"></i></a>
+                                <a class="paddingRight-15" title="Edit" href="addEditUser.php?cmode=edit"><i class="fa fa-edit"></i></a>
                         </tr>
                         <?php
 }

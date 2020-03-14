@@ -10,6 +10,6 @@
   
     // assign to smarty 
     $smarty->assign('res',$res); 
-    $smarty->display('display.tpl');
+    $smarty->display('listUser.tpl');
     
 ?>

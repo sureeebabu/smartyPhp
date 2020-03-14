@@ -30,7 +30,7 @@
                 <div class="box-header with-border">
                     <h3 class="box-title">List of Users</h3>
                     <div class="box-tools">
-                        <a class="btn btn-primary btn-sm" href="#?cmode=add" role="button">Add New
+                        <a class="btn btn-primary btn-sm" href="addEditUser.php?cmode=add" role="button">Add New
                             User</a>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                                 <b>{$r.userIsActive}
                             </td>
                             <td class="text-center">
-                                <a class="paddingRight-15" title="Edit" href="#"><i class="fa fa-edit"></i></a>
+                                <a class="paddingRight-15" title="Edit" href="addEditUser.php?cmode=edit"><i class="fa fa-edit"></i></a>
                         </tr>
                         {foreachelse}
                         <tr>
